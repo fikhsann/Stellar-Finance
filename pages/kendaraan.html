@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/kendaraan.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Stellar</a>
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+
+        <div class="nightMode">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-moon"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+            />
+          </svg>
+        </div>
+      </nav>
+
+      <section class="vehicle-section">
+        <div class="neo-container">
+          <div class="calc-header">
+            <div class="mascot-box">🚗</div>
+            <h2>Otw Punya Mobil!</h2>
+            <p>Hitung inflasi & strategi nabung buat DP kendaraan impian.</p>
+          </div>
+
+          <form id="vehicleForm">
+            <div class="strategy-section">
+              <h3>1. Target Kendaraan</h3>
+
+              <div class="input-block">
+                <label>Harga Kendaraan Saat Ini</label>
+                <div class="neo-input-group orange-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="carPrice"
+                    class="money-input"
+                    placeholder="300.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="row-inputs">
+                <div class="input-block" style="flex: 1">
+                  <label>Rencana Beli (Tahun Lagi)</label>
+                  <div class="neo-input-group orange-theme">
+                    <input
+                      type="number"
+                      id="yearsTime"
+                      placeholder="3"
+                      style="text-align: center"
+                    />
+                    <span class="suffix">Thn</span>
+                  </div>
+                </div>
+
+                <div class="input-block" style="flex: 1">
+                  <label>Asumsi Inflasi / Tahun</label>
+                  <div class="neo-input-group orange-theme">
+                    <input
+                      type="number"
+                      id="inflationRate"
+                      placeholder="5"
+                      step="0.1"
+                      style="text-align: center"
+                    />
+                    <span class="suffix">%</span>
+                  </div>
+                  <small style="font-size: 0.7rem"
+                    >*Rata-rata inflasi kendaraan 3-5%</small
+                  >
+                </div>
+              </div>
+
+              <div class="input-block">
+                <label>Rencana DP (Down Payment)</label>
+                <div class="neo-input-group orange-theme">
+                  <input
+                    type="number"
+                    id="dpPercent"
+                    placeholder="30"
+                    style="text-align: center"
+                  />
+                  <span class="suffix">%</span>
+                </div>
+              </div>
+
+              <div class="info-badge orange-badge">
+                <div>
+                  <small>Target DP yg dibutuhkan nanti:</small><br />
+                  <strong id="targetFutureDP" style="font-size: 1.5rem"
+                    >Rp 0</strong
+                  >
+                </div>
+                <div style="text-align: right; font-size: 0.8rem; opacity: 0.8">
+                  (Harga mobil jadi <br /><span id="futureCarPrice">Rp 0</span>)
+                </div>
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="strategy-section">
+              <h3>2. Strategi Nabung</h3>
+
+              <div class="input-block">
+                <label>Tabungan Awal (Modal)</label>
+                <div class="neo-input-group orange-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="currentSavings"
+                    class="money-input"
+                    placeholder="10.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="input-block">
+                <label>Sanggup Nabung per Bulan</label>
+                <div class="neo-input-group orange-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="monthlySavings"
+                    class="money-input"
+                    placeholder="2.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="input-block">
+                <label>Estimasi Return Investasi</label>
+                <div class="neo-input-group orange-theme">
+                  <input
+                    type="number"
+                    id="investReturn"
+                    placeholder="10"
+                    style="text-align: center"
+                  />
+                  <span class="suffix">%</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="vehicle-btn">
+              CEK KEKUATAN NABUNG 🚀
+            </button>
+          </form>
+
+          <div id="vehicleResult" class="result-card" style="display: none">
+            <div class="result-header vehicle-header-result">
+              <h4>🏁 Hasil Balapan Nabung</h4>
+            </div>
+
+            <div class="result-body">
+              <div id="statusBox" class="safety-box status-warning">
+                <div class="icon-status" id="statusIcon">🤔</div>
+                <div class="text-status">
+                  <h5 id="statusTitle">Menghitung...</h5>
+                  <p id="statusDesc">...</p>
+                </div>
+              </div>
+
+              <div class="result-row big-result">
+                <span>Uang Terkumpul Nanti:</span>
+                <h2 id="resTotalMoney">Rp 0</h2>
+              </div>
+
+              <div class="comparison-bar-wrapper">
+                <div class="comp-label">
+                  <span>Progress ke Target DP:</span>
+                  <strong id="progressPercent">0%</strong>
+                </div>
+                <div class="progress-track">
+                  <div
+                    id="progressBar"
+                    class="progress-fill"
+                    style="width: 0%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="result-details">
+                <div class="detail-item">
+                  <span>Target DP (Kena Inflasi):</span>
+                  <strong id="resTargetDP">Rp 0</strong>
+                </div>
+                <div class="detail-item">
+                  <span>Selisih (Kurang/Lebih):</span>
+                  <strong id="resGap">Rp 0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="../javascript/kendaraan.js"></script>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/kalkulator.css" />
+    <title>Kalkulator</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">Stellar</a>
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+
+        <div class="nightMode">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-moon"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+            />
+          </svg>
+        </div>
+      </nav>
+
+      <section class="calculator-section">
+        <div class="neo-container">
+          <div class="calc-header">
+            <div class="mascot-box">🤖</div>
+            <h2>Rancang Mimpimu!</h2>
+            <p>Ayo hitung strategi biar jadi sultan.</p>
+          </div>
+
+          <form id="investForm">
+            <div class="input-block">
+              <label>Jumlah uang yang ingin dicapai (Target)</label>
+              <div class="neo-input-group">
+                <span class="prefix">Rp</span>
+                <input
+                  type="text"
+                  id="targetMoney"
+                  class="money-input"
+                  placeholder="100.000.000"
+                />
+              </div>
+            </div>
+
+            <div class="input-block">
+              <label>Mau terkumpul dalam waktu</label>
+              <div class="neo-input-group">
+                <input
+                  type="number"
+                  id="duration"
+                  placeholder="5"
+                  style="text-align: center"
+                />
+                <span class="suffix">Tahun</span>
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="strategy-section">
+              <h3>Atur Strategi Investasi</h3>
+
+              <div class="input-block">
+                <label>Uang dingin saat ini (Modal Awal)</label>
+                <div class="neo-input-group yellow-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="initialMoney"
+                    class="money-input"
+                    placeholder="1.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="input-block">
+                <label>Sanggup nabung rutin per bulan</label>
+                <div class="neo-input-group yellow-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="monthlySave"
+                    class="money-input"
+                    placeholder="500.000"
+                  />
+                </div>
+              </div>
+
+              <div class="input-block">
+                <label>Estimasi Return Investasi (per Tahun)</label>
+                <div class="neo-input-group yellow-theme">
+                  <input
+                    type="number"
+                    id="returnRate"
+                    placeholder="12"
+                    style="text-align: center"
+                  />
+                  <span class="suffix">%</span>
+                </div>
+                <small>Contoh: Saham (12-15%), Reksadana (5-8%)</small>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-calculate">
+              LIHAT HASILNYA 🚀
+            </button>
+          </form>
+
+          <div id="resultCard" class="result-card" style="display: none">
+            <div class="result-header">
+              <h4>✨ Hasil Strategimu</h4>
+            </div>
+
+            <div class="result-body">
+              <div class="result-row big-result">
+                <span>Total Uang Terkumpul:</span>
+                <h2 id="totalResult">Rp 0</h2>
+              </div>
+
+              <div class="breakdown-bar">
+                <div
+                  id="barPrincipal"
+                  class="bar-part principal"
+                  style="width: 50%"
+                ></div>
+                <div
+                  id="barInterest"
+                  class="bar-part interest"
+                  style="width: 50%"
+                ></div>
+              </div>
+              <div class="legend">
+                <span class="dot-principal">● Pokok (Uangmu)</span>
+                <span class="dot-interest">● Bunga (Cuan)</span>
+              </div>
+
+              <div class="result-details">
+                <div class="detail-item">
+                  <span>Total Modal Disetor:</span>
+                  <strong id="totalPrincipal">Rp 0</strong>
+                </div>
+                <div class="detail-item">
+                  <span>Total Cuan Investasi:</span>
+                  <strong id="totalInterest" style="color: #4ade80"
+                    >Rp 0</strong
+                  >
+                </div>
+                <div class="detail-item">
+                  <span>Selisih dari Target:</span>
+                  <strong id="targetGap">Rp 0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="../javascript/kalkulator.js"></script>
+  </body>
+</html>

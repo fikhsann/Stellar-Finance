@@ -1,0 +1,123 @@
+.video-section {
+  position: relative;
+  padding-top: 6.4rem;
+  width: 100%; /* Lebar mentok layar */
+  height: 80vh; /* Tinggi cuma 35% layar (kurang lebih 1/4) */
+  overflow: hidden; /* Potong video yang kelebihan */
+  border: 3px solid black;
+}
+
+.video-section .the-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.3); /* Gelapin dikit biar gak silau (opsional) */
+}
+.video-section .first-title {
+  top: 40%;
+  right: 42%;
+  font-size: 80px;
+  color: cadetblue;
+}
+
+.first-title,
+.second-title {
+  position: absolute;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  font-size: 80px;
+  font-weight: bolder;
+  text-shadow: 4px 4px black;
+}
+
+.video-section .second-title {
+  top: 57%;
+  right: 26%;
+  color: orange;
+}
+
+.content-section {
+  background-color: #3300e6;
+  border: 3px solid black;
+  padding: 3rem 4rem;
+  min-height: 80vh;
+}
+
+.content-section h1 {
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.card-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card-box a {
+  text-decoration: none;
+  width: 25%;
+  height: 35vh;
+  border: 4px solid black;
+  box-shadow: 4px 4px black;
+}
+
+.investment-cal {
+  background-color: greenyellow;
+}
+
+.card-box .investment-cal,
+.properti-cal,
+.kendaraan-cal,
+.education-cal,
+.retired-cal,
+.goods-cal {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  gap: 0.8rem;
+  flex-direction: column;
+}
+
+.card-box .investment-cal img,
+.properti-cal img,
+.kendaraan-cal img,
+.education-cal img,
+.retired-cal img,
+.goods-cal img {
+  width: 80px;
+}
+
+.card-box .investment-cal h1,
+.properti-cal h1,
+.kendaraan-cal h1,
+.education-cal h1,
+.retired-cal h1,
+.goods-cal h1 {
+  text-align: center;
+  color: black;
+  font-size: 30px;
+}
+
+.properti-cal {
+  background-color: yellow;
+}
+
+.kendaraan-cal {
+  background-color: orange;
+}
+
+.education-cal {
+  background-color: skyblue;
+}
+
+.retired-cal {
+  background-color: aquamarine;
+}
+
+.goods-cal {
+  background-color: ivory;
+}

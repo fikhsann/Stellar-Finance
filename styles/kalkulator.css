@@ -1,0 +1,196 @@
+/* --- CONTAINER UTAMA --- */
+.calculator-section {
+  background-color: #fcf8f2;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.neo-container {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border: 4px solid black;
+  box-shadow: 10px 10px 0px black;
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+/* --- HEADER --- */
+.calc-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.mascot-box {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.calc-header h2 {
+  font-weight: 900;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+/* --- INPUT STYLES --- */
+.input-block {
+  margin-bottom: 1.5rem;
+}
+.input-block label {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.neo-input-group {
+  display: flex;
+  border: 3px solid black;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+/* Warna Default Input (Biru Muda) */
+.neo-input-group {
+  background-color: #e0f2fe;
+}
+/* Warna Strategy Input (Kuning biar beda) */
+.neo-input-group.yellow-theme {
+  background-color: #fef9c3;
+}
+
+.neo-input-group:focus-within {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0px black;
+}
+
+.prefix,
+.suffix {
+  padding: 1rem;
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.neo-input-group input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  outline: none;
+}
+
+.divider {
+  border: 2px dashed black;
+  margin: 2rem 0;
+  opacity: 0.3;
+}
+
+/* --- BUTTON --- */
+.btn-calculate {
+  width: 100%;
+  padding: 1rem;
+  background-color: #3300e6; /* Ungu Kreate */
+  color: white;
+  font-weight: 900;
+  font-size: 1.2rem;
+  border: 3px solid black;
+  box-shadow: 5px 5px 0px black;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: 0.2s;
+}
+
+.btn-calculate:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px black;
+}
+
+/* --- RESULT CARD (Bagian Hitam di Referensi) --- */
+.result-card {
+  margin-top: 3rem;
+  border: 3px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.result-header {
+  background-color: #3300e6;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 3px solid black;
+}
+
+.result-body {
+  background-color: #1a1a1a; /* Dark Mode background */
+  padding: 1.5rem;
+  color: white;
+}
+
+.big-result {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.big-result h2 {
+  font-size: 2.5rem;
+  color: #ffd700; /* Kuning Emas */
+  text-shadow: 3px 3px 0px black;
+}
+
+/* Progress Bar Breakdown */
+.breakdown-bar {
+  display: flex;
+  height: 25px;
+  border: 2px solid white;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+.bar-part.principal {
+  background-color: #3ca9fc;
+} /* Biru */
+.bar-part.interest {
+  background-color: #4ade80;
+} /* Hijau */
+
+.legend {
+  font-size: 0.8rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.dot-principal {
+  color: #3ca9fc;
+}
+.dot-interest {
+  color: #4ade80;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #444;
+}
+.detail-item:last-child {
+  border-bottom: none;
+  margin-top: 1rem;
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/pendidikan.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Stellar</a>
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+
+        <div class="nightMode">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-moon"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+            />
+          </svg>
+        </div>
+      </nav>
+
+      <section class="education-section">
+        <div class="neo-container">
+          <div class="calc-header">
+            <div class="mascot-box">🎓</div>
+            <h2>Dana Pendidikan</h2>
+            <p>Inflasi sekolah itu "jahat". Lawan pakai strategi!</p>
+          </div>
+
+          <form id="eduForm">
+            <div class="strategy-section">
+              <h3>1. Siapa yang mau sekolah?</h3>
+
+              <div class="input-block">
+                <label>Nama Anak</label>
+                <div class="neo-input-group pink-theme">
+                  <input
+                    type="text"
+                    id="childName"
+                    placeholder="Misal: Cipung"
+                    style="text-align: left"
+                  />
+                </div>
+              </div>
+
+              <div class="row-inputs">
+                <div class="input-block" style="flex: 1">
+                  <label>Umur Sekarang</label>
+                  <div class="neo-input-group pink-theme">
+                    <input
+                      type="number"
+                      id="childAge"
+                      placeholder="2"
+                      style="text-align: center"
+                    />
+                    <span class="suffix">Thn</span>
+                  </div>
+                </div>
+
+                <div class="input-block" style="flex: 1">
+                  <label>Masuk Sekolah Umur</label>
+                  <div class="neo-input-group pink-theme">
+                    <input
+                      type="number"
+                      id="entryAge"
+                      placeholder="18"
+                      style="text-align: center"
+                    />
+                    <span class="suffix">Thn</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-badge pink-badge">
+                <span>Waktu Tersisa:</span>
+                <strong id="yearsLeft">0 Tahun Lagi</strong>
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="strategy-section">
+              <h3>2. Biaya Sekolah (Harga Sekarang)</h3>
+
+              <div class="input-block">
+                <label>Uang Pangkal (Masuk Awal)</label>
+                <div class="neo-input-group pink-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="entryFee"
+                    class="money-input"
+                    placeholder="50.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="row-inputs">
+                <div class="input-block" style="flex: 1.5">
+                  <label>SPP / Uang Bulanan</label>
+                  <div class="neo-input-group pink-theme">
+                    <span class="prefix">Rp</span>
+                    <input
+                      type="text"
+                      id="monthlyFee"
+                      class="money-input"
+                      placeholder="2.000.000"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-block" style="flex: 1">
+                  <label>Lama Sekolah</label>
+                  <div class="neo-input-group pink-theme">
+                    <input
+                      type="number"
+                      id="schoolDuration"
+                      placeholder="4"
+                      style="text-align: center"
+                    />
+                    <span class="suffix">Thn</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-block">
+                <label>Asumsi Inflasi Pendidikan</label>
+                <div class="neo-input-group pink-theme">
+                  <input
+                    type="number"
+                    id="eduInflation"
+                    placeholder="10"
+                    step="0.1"
+                    style="text-align: center"
+                  />
+                  <span class="suffix">%</span>
+                </div>
+                <small>*Pendidikan biasanya naik 10-15% per tahun!</small>
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="strategy-section">
+              <h3>3. Kesiapan Dana</h3>
+
+              <div class="input-block">
+                <label>Tabungan Pendidikan Saat Ini</label>
+                <div class="neo-input-group pink-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="currentEduSavings"
+                    class="money-input"
+                    placeholder="10.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="row-inputs">
+                <div class="input-block" style="flex: 1.5">
+                  <label>Investasi Rutin / Bulan</label>
+                  <div class="neo-input-group pink-theme">
+                    <span class="prefix">Rp</span>
+                    <input
+                      type="text"
+                      id="monthlyEduInvest"
+                      class="money-input"
+                      placeholder="1.000.000"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-block" style="flex: 1">
+                  <label>Return</label>
+                  <div class="neo-input-group pink-theme">
+                    <input
+                      type="number"
+                      id="eduReturn"
+                      placeholder="12"
+                      style="text-align: center"
+                    />
+                    <span class="suffix">%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="edu-btn">
+              HITUNG MASA DEPAN ANAK 👶
+            </button>
+          </form>
+
+          <div id="eduResult" class="result-card" style="display: none">
+            <div class="result-header edu-header-result">
+              <h4>🎓 Lapor Pak!</h4>
+            </div>
+
+            <div class="result-body">
+              <div id="eduStatusBox" class="safety-box">
+                <div class="icon-status" id="eduIcon">🎉</div>
+                <div class="text-status">
+                  <h5 id="eduTitle">AMAN</h5>
+                  <p id="eduDesc">Dana cukup.</p>
+                </div>
+              </div>
+
+              <div class="result-row big-result">
+                <span>Total Biaya Nanti (Kena Inflasi):</span>
+                <h2 id="totalFutureCost" style="color: #f472b6">Rp 0</h2>
+              </div>
+
+              <div class="result-details">
+                <div class="detail-item">
+                  <span>Hasil Investasimu Nanti:</span>
+                  <strong id="totalFutureSavings" style="color: #4ade80"
+                    >Rp 0</strong
+                  >
+                </div>
+                <div class="detail-item">
+                  <span>Selisih (Gap):</span>
+                  <strong id="eduGap">Rp 0</strong>
+                </div>
+              </div>
+
+              <div class="recommendation-box">
+                <p>
+                  💡
+                  <span id="recommendationText">Pertahankan strategimu!</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="../javascript/pendidikan.js"></script>
+  </body>
+</html>

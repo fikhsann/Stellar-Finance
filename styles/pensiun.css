@@ -1,0 +1,246 @@
+/* --- 1. LAYOUT & BACKGROUND --- */
+.pension-section {
+  background-color: #fcf8f2; /* Krem background */
+  min-height: 100vh;
+  padding: 8rem 2rem 5rem 2rem; /* Jarak atas biar gak ketutup navbar */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* --- 2. WADAH UTAMA (KOTAK TEBAL) --- */
+.neo-container {
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  border: 4px solid black; /* Garis hitam tebal */
+  box-shadow: 12px 12px 0px black; /* Shadow keras */
+  padding: 2.5rem;
+  border-radius: 20px;
+  position: relative;
+}
+
+/* --- 3. HEADER & JUDUL --- */
+.calc-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.mascot-box {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+.calc-header h2 {
+  font-weight: 900;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+}
+
+/* --- 4. STYLE INPUT (TEMA LIME) --- */
+.input-block {
+  margin-bottom: 1.5rem;
+}
+.input-block label {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+/* Layout Baris Kiri-Kanan */
+.row-inputs {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Kotak Input Neo */
+.neo-input-group {
+  display: flex;
+  border: 3px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.2s;
+  background-color: white;
+}
+
+/* INI YANG BIKIN WARNA HIJAU LIME */
+.neo-input-group.lime-theme {
+  background-color: #ecfccb; /* Lime Muda */
+}
+
+/* Efek Klik */
+.neo-input-group:focus-within {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px black;
+  background-color: #d9f99d; /* Lime agak gelap dikit */
+}
+
+/* Tulisan Rp / Tahun */
+.prefix,
+.suffix {
+  padding: 1rem;
+  background: black;
+  color: white;
+  font-weight: bold;
+}
+
+/* Input Aslinya */
+.money-input,
+input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: right;
+  outline: none;
+}
+
+/* --- 5. BADGE WAKTU (HIJAU TUA) --- */
+.info-badge.lime-badge {
+  background-color: #65a30d; /* Hijau Lumut */
+  color: white;
+  border: 3px solid black;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 4px 4px 0px black;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* --- 6. TOMBOL HITUNG (HIJAU NEON) --- */
+.pension-btn {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: #84cc16; /* Lime Cerah */
+  color: white;
+  font-weight: 900;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  border: 3px solid black;
+  box-shadow: 6px 6px 0px black;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-top: 2rem;
+  transition: all 0.1s;
+}
+
+.pension-btn:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px black;
+  background-color: #4d7c0f;
+}
+
+/* --- 7. HASIL (RESULT CARD) --- */
+.result-card {
+  margin-top: 3rem;
+  border: 4px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+  animation: slideUp 0.5s ease;
+}
+
+.pension-header-result {
+  background-color: #84cc16; /* Header Hijau */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 3px solid black;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.result-body {
+  background-color: #1a1a1a; /* Dark Mode */
+  padding: 2rem;
+  color: white;
+}
+
+/* Angka Gede */
+.big-result {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.big-result h2 {
+  font-size: 2.5rem;
+  color: #bef264; /* Text Lime Neon */
+  text-shadow: 3px 3px 0px black;
+  margin-top: 0.5rem;
+}
+
+/* List Detail */
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #333;
+}
+
+/* Kotak Rekomendasi Khusus Pensiun */
+.recommendation-box {
+  padding: 1rem;
+  border: 2px dashed #84cc16;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #222;
+}
+
+/* --- 8. STATUS BOX (AMAN/BAHAYA) --- */
+.safety-box {
+  border: 3px solid black;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px black;
+  color: black;
+}
+.status-safe {
+  background-color: #4ade80;
+} /* Hijau Aman */
+.status-danger {
+  background-color: #ff5f56;
+  color: white;
+} /* Merah Bahaya */
+
+.text-status h5 {
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+.text-status p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Animasi Muncul */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+  .neo-container {
+    padding: 1.5rem;
+  }
+  .row-inputs {
+    flex-direction: column;
+    gap: 0;
+  }
+  .prefix,
+  .suffix {
+    padding: 0.8rem;
+  }
+}

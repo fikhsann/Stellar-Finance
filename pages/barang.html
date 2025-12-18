@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/barang.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Stellar</a>
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+
+        <div class="nightMode">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-moon"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+            />
+          </svg>
+        </div>
+      </nav>
+
+      <section class="shopping-section">
+        <div class="neo-container">
+          <div class="calc-header">
+            <div class="mascot-box">🛍️</div>
+            <h2>Wishlist Hunter</h2>
+            <p>Mau iPhone atau Tas baru? Atur strateginya biar gak boncos.</p>
+          </div>
+
+          <form id="shopForm">
+            <div class="strategy-section">
+              <h3>1. Barang Impian</h3>
+
+              <div class="input-block">
+                <label>Nama Barang</label>
+                <div class="neo-input-group cyan-theme">
+                  <input
+                    type="text"
+                    id="itemName"
+                    placeholder="Misal: iPhone 16 Pro"
+                    style="text-align: left"
+                  />
+                </div>
+              </div>
+
+              <div class="input-block">
+                <label>Harga Saat Ini</label>
+                <div class="neo-input-group cyan-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="itemPrice"
+                    class="money-input"
+                    placeholder="20.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="row-inputs">
+                <div class="input-block" style="flex: 1">
+                  <label>Rencana Beli</label>
+                  <div class="neo-input-group cyan-theme">
+                    <input
+                      type="number"
+                      id="targetMonths"
+                      placeholder="12"
+                      style="text-align: center"
+                    />
+                    <span class="suffix">Bulan</span>
+                  </div>
+                </div>
+
+                <div class="input-block" style="flex: 1">
+                  <label>Inflasi Barang</label>
+                  <div class="neo-input-group cyan-theme">
+                    <input
+                      type="number"
+                      id="inflationItem"
+                      placeholder="5"
+                      step="0.1"
+                      style="text-align: center"
+                    />
+                    <span class="suffix">%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="strategy-section">
+              <h3>2. Metode Bayar</h3>
+
+              <div class="payment-toggle">
+                <input
+                  type="radio"
+                  id="payCash"
+                  name="payMethod"
+                  value="cash"
+                  checked
+                  onchange="toggleDP(false)"
+                />
+                <label for="payCash">CASH KERAS 💰</label>
+
+                <input
+                  type="radio"
+                  id="payCredit"
+                  name="payMethod"
+                  value="credit"
+                  onchange="toggleDP(true)"
+                />
+                <label for="payCredit">CICIL / KREDIT 💳</label>
+              </div>
+
+              <div
+                id="dpSection"
+                class="input-block"
+                style="
+                  display: none;
+                  margin-top: 1.5rem;
+                  animation: fadeIn 0.3s;
+                "
+              >
+                <label>Rencana DP (Down Payment)</label>
+                <div class="neo-input-group cyan-theme">
+                  <input
+                    type="number"
+                    id="dpPercentItem"
+                    placeholder="20"
+                    style="text-align: center"
+                  />
+                  <span class="suffix">%</span>
+                </div>
+                <small>Biasanya DP minimal 10-20%</small>
+              </div>
+
+              <div class="info-badge cyan-badge">
+                <div>
+                  <small id="targetLabel">Total Uang yg Harus Dikumpulin:</small
+                  ><br />
+                  <strong id="finalTargetMoney">Rp 0</strong>
+                </div>
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="strategy-section">
+              <h3>3. Kekuatan Nabung</h3>
+
+              <div class="input-block">
+                <label>Tabungan Awal</label>
+                <div class="neo-input-group cyan-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="currentShopSave"
+                    class="money-input"
+                    placeholder="1.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="row-inputs">
+                <div class="input-block" style="flex: 1.5">
+                  <label>Nabung / Bulan</label>
+                  <div class="neo-input-group cyan-theme">
+                    <span class="prefix">Rp</span>
+                    <input
+                      type="text"
+                      id="monthlyShopInvest"
+                      class="money-input"
+                      placeholder="500.000"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-block" style="flex: 1">
+                  <label>Return</label>
+                  <div class="neo-input-group cyan-theme">
+                    <input
+                      type="number"
+                      id="shopReturn"
+                      placeholder="6"
+                      style="text-align: center"
+                    />
+                    <span class="suffix">%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="shop-btn">CEK WISH LIST ✅</button>
+          </form>
+
+          <div id="shopResult" class="result-card" style="display: none">
+            <div class="result-header shop-header-result">
+              <h4>🛒 Hasil Check-Out</h4>
+            </div>
+
+            <div class="result-body">
+              <div id="shopStatusBox" class="safety-box">
+                <div class="icon-status" id="shopIcon">🤩</div>
+                <div class="text-status">
+                  <h5 id="shopTitle">BISA BELI!</h5>
+                  <p id="shopDesc">Uang cukup.</p>
+                </div>
+              </div>
+
+              <div class="result-row big-result">
+                <span>Target Dana Nanti (Kena Inflasi):</span>
+                <h2 id="shopTargetAmount" style="color: #67e8f9">Rp 0</h2>
+              </div>
+
+              <div class="comparison-bar-wrapper">
+                <div class="comp-label">
+                  <span>Progress Tabungan:</span>
+                  <strong id="shopProgressTxt">0%</strong>
+                </div>
+                <div class="progress-track" style="border-color: #22d3ee">
+                  <div
+                    id="shopProgressBar"
+                    class="progress-fill"
+                    style="width: 0%; background-color: #22d3ee"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="result-details">
+                <div class="detail-item">
+                  <span>Estimasi Hasil Investasi:</span>
+                  <strong id="shopWealth">Rp 0</strong>
+                </div>
+                <div class="detail-item">
+                  <span>Selisih:</span>
+                  <strong id="shopGap">Rp 0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

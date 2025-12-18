@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/kpr.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">Stellar</a>
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+
+        <div class="nightMode">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-moon"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+            />
+          </svg>
+        </div>
+      </nav>
+
+      <section class="kpr-section">
+        <div class="neo-container">
+          <div class="calc-header">
+            <div class="mascot-box">🏠</div>
+            <h2>Simulasi KPR</h2>
+            <p>Cek apakah gaji kamu cukup buat nyicil rumah impian.</p>
+          </div>
+
+          <form id="kprForm">
+            <div class="strategy-section">
+              <h3>1. Data Properti</h3>
+
+              <div class="input-block">
+                <label>Harga Properti Impian</label>
+                <div class="neo-input-group blue-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="propertyPrice"
+                    class="money-input"
+                    placeholder="800.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="row-inputs">
+                <div class="input-block" style="flex: 1">
+                  <label>Uang Muka (DP)</label>
+                  <div class="neo-input-group blue-theme">
+                    <input
+                      type="number"
+                      id="dpPercent"
+                      placeholder="20"
+                      style="text-align: center"
+                    />
+                    <span class="suffix">%</span>
+                  </div>
+                </div>
+
+                <div class="input-block" style="flex: 1.5">
+                  <label>Nominal DP (Otomatis)</label>
+                  <div class="neo-input-group disabled-input">
+                    <span class="prefix">Rp</span>
+                    <input type="text" id="dpAmount" readonly value="0" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-badge">
+                <span>Pokok Pinjaman (Plafond):</span>
+                <strong id="loanPrincipal">Rp 0</strong>
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="strategy-section">
+              <h3>2. Kemampuan Bayar</h3>
+
+              <div class="input-block">
+                <label>Penghasilan Bulanan (Gaji + Lainnya)</label>
+                <div class="neo-input-group blue-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="monthlyIncome"
+                    class="money-input"
+                    placeholder="10.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="row-inputs">
+                <div class="input-block">
+                  <label>Bunga (Fixed)</label>
+                  <div class="neo-input-group blue-theme">
+                    <input
+                      type="number"
+                      id="interestRate"
+                      placeholder="5"
+                      step="0.1"
+                    />
+                    <span class="suffix">%</span>
+                  </div>
+                </div>
+
+                <div class="input-block">
+                  <label>Tenor (Lama Pinjam)</label>
+                  <div class="neo-input-group blue-theme">
+                    <input type="number" id="loanTenure" placeholder="15" />
+                    <span class="suffix">Tahun</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-calculate kpr-btn">
+              HITUNG CICILAN 🏠
+            </button>
+          </form>
+
+          <div id="kprResult" class="result-card" style="display: none">
+            <div class="result-header kpr-header-result">
+              <h4>📊 Analisa KPR Kamu</h4>
+            </div>
+
+            <div class="result-body">
+              <div id="safetyBadge" class="safety-box status-safe">
+                <div class="icon-status">✅</div>
+                <div class="text-status">
+                  <h5>Aman Banget!</h5>
+                  <p>Cicilan masih di bawah 30% gaji kamu.</p>
+                </div>
+              </div>
+
+              <div class="result-row big-result">
+                <span>Cicilan Per Bulan:</span>
+                <h2 id="monthlyInstallment">Rp 0</h2>
+              </div>
+
+              <div class="result-details">
+                <div class="detail-item">
+                  <span>Rasio Cicilan vs Gaji:</span>
+                  <strong id="dtiRatio">0%</strong>
+                </div>
+                <div class="detail-item">
+                  <span>Total Pinjaman:</span>
+                  <strong id="resLoan">Rp 0</strong>
+                </div>
+                <div class="detail-item">
+                  <span>Total Bunga Dibayar:</span>
+                  <strong id="resInterest" style="color: #ff5f56">Rp 0</strong>
+                </div>
+                <div class="detail-item">
+                  <span>Total Setor ke Bank:</span>
+                  <strong id="resTotalPayment">Rp 0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="../javascript/kpr.js"></script>
+  </body>
+</html>

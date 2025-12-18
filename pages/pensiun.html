@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/pensiun.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <a href="../index.html" class="logo">Stellar</a>
+      <ul>
+        <li><a href="../index.html">Beranda</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+
+      <div class="nightMode">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#000000"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-moon"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+          />
+        </svg>
+      </div>
+    </nav>
+
+    <div class="container">
+      <section class="pension-section">
+        <div class="neo-container">
+          <div class="calc-header">
+            <div class="mascot-box">👴</div>
+            <h2>Dana Pensiun</h2>
+            <p>Muda foya-foya, tua kaya raya? Coba hitung dulu!</p>
+          </div>
+
+          <form id="pensionForm">
+            <div class="strategy-section">
+              <h3>1. Target Pensiun</h3>
+
+              <div class="input-block">
+                <label>Pengeluaran Bulanan Saat Ini</label>
+                <div class="neo-input-group lime-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="monthlyExpense"
+                    class="money-input"
+                    placeholder="5.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="row-inputs">
+                <div class="input-block" style="flex: 1">
+                  <label>Umur Sekarang</label>
+                  <div class="neo-input-group lime-theme">
+                    <input
+                      type="number"
+                      id="currentAge"
+                      placeholder="25"
+                      style="text-align: center"
+                    />
+                    <span class="suffix">Thn</span>
+                  </div>
+                </div>
+
+                <div class="input-block" style="flex: 1">
+                  <label>Target Pensiun</label>
+                  <div class="neo-input-group lime-theme">
+                    <input
+                      type="number"
+                      id="pensionAge"
+                      placeholder="55"
+                      style="text-align: center"
+                    />
+                    <span class="suffix">Thn</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-block">
+                <label>Asumsi Inflasi Tahunan</label>
+                <div class="neo-input-group lime-theme">
+                  <input
+                    type="number"
+                    id="inflationPension"
+                    placeholder="4"
+                    step="0.1"
+                    style="text-align: center"
+                  />
+                  <span class="suffix">%</span>
+                </div>
+                <small>*Rata-rata inflasi jangka panjang 3-5%</small>
+              </div>
+
+              <div class="info-badge lime-badge">
+                <div>
+                  <small>Jarak waktu ke pensiun:</small><br />
+                  <strong id="yearsToPension">0 Tahun Lagi</strong>
+                </div>
+                <div style="text-align: right; font-size: 2rem">⏳</div>
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="strategy-section">
+              <h3>2. Modal Saat Ini</h3>
+
+              <div class="input-block">
+                <label>Saldo Dana Pensiun (JHT/DPLK)</label>
+                <div class="neo-input-group lime-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="currentPensionSave"
+                    class="money-input"
+                    placeholder="10.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="input-block">
+                <label>Investasi Rutin / Bulan</label>
+                <div class="neo-input-group lime-theme">
+                  <span class="prefix">Rp</span>
+                  <input
+                    type="text"
+                    id="monthlyPensionInvest"
+                    class="money-input"
+                    placeholder="1.000.000"
+                  />
+                </div>
+              </div>
+
+              <div class="input-block">
+                <label>Estimasi Return Investasi</label>
+                <div class="neo-input-group lime-theme">
+                  <input
+                    type="number"
+                    id="pensionReturn"
+                    placeholder="10"
+                    style="text-align: center"
+                  />
+                  <span class="suffix">%</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="pension-btn">
+              CEK NASIB HARI TUA 🔮
+            </button>
+          </form>
+
+          <div id="pensionResult" class="result-card" style="display: none">
+            <div class="result-header pension-header-result">
+              <h4>🌴 Plan Masa Tua</h4>
+            </div>
+
+            <div class="result-body">
+              <div id="pensionStatusBox" class="safety-box">
+                <div class="icon-status" id="pensionIcon">🏖️</div>
+                <div class="text-status">
+                  <h5 id="pensionTitle">SIAP PENSIUN</h5>
+                  <p id="pensionDesc">Dana aman.</p>
+                </div>
+              </div>
+
+              <div
+                class="recommendation-box"
+                style="margin-bottom: 2rem; border-color: #84cc16"
+              >
+                <p
+                  style="
+                    margin-bottom: 0.5rem;
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                  "
+                >
+                  Biaya Hidup Tahunan Pas Tua Nanti:
+                </p>
+                <h3 id="futureAnnualExpense" style="color: #bef264; margin: 0">
+                  Rp 0
+                </h3>
+              </div>
+
+              <div class="result-row big-result">
+                <span>Total Dana Dibutuhkan (4% Rule):</span>
+                <h2 id="totalNeeded" style="color: #bef264">Rp 0</h2>
+                <small style="opacity: 0.6; font-size: 0.8rem"
+                  >(Ini angka 'Gunung Emas' kamu)</small
+                >
+              </div>
+
+              <div class="result-details">
+                <div class="detail-item">
+                  <span>Proyeksi Uangmu Nanti:</span>
+                  <strong id="projectedWealth">Rp 0</strong>
+                </div>
+                <div class="detail-item">
+                  <span>Selisih (Gap):</span>
+                  <strong id="pensionGap">Rp 0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="../javascript/pensiun.js"></script>
+  </body>
+</html>

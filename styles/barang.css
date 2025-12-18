@@ -1,0 +1,305 @@
+/* --- 1. SETTING FONT GLOBAL (BIAR GAK KAKU) --- */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Ganti font standar */
+}
+
+/* --- 2. LAYOUT & BACKGROUND --- */
+.shopping-section {
+  background-color: #fcf8f2; /* Krem background */
+  min-height: 100vh;
+  padding: 8rem 2rem 5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* --- 3. WADAH UTAMA (KOTAK TEBAL) --- */
+.neo-container {
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  border: 4px solid black; /* Garis tebal */
+  box-shadow: 12px 12px 0px black; /* Shadow keras */
+  padding: 2.5rem;
+  border-radius: 20px;
+  position: relative;
+}
+
+/* --- 4. HEADER & JUDUL --- */
+.calc-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.mascot-box {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+.calc-header h2 {
+  font-weight: 900;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+.calc-header p {
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* --- 5. STYLE INPUT (TEMA CYAN) --- */
+.strategy-section h3 {
+  font-weight: 800;
+  border-bottom: 3px solid black;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.input-block {
+  margin-bottom: 1.5rem;
+}
+.input-block label {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.row-inputs {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Kotak Input Neo */
+.neo-input-group {
+  display: flex;
+  border: 3px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.2s;
+  background-color: white;
+}
+
+/* INI YANG BIKIN WARNA CYAN */
+.neo-input-group.cyan-theme {
+  background-color: #cffafe; /* Cyan Muda */
+}
+
+.neo-input-group:focus-within {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px black;
+  background-color: #a5f3fc;
+}
+
+.prefix,
+.suffix {
+  padding: 1rem;
+  background: black;
+  color: white;
+  font-weight: bold;
+}
+
+.money-input,
+input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: right;
+  outline: none;
+}
+/* Paksa text align left buat nama barang */
+#itemName {
+  text-align: left;
+}
+
+/* --- 6. TOMBOL PILIHAN BAYAR (CASH/KREDIT) --- */
+.payment-toggle {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.payment-toggle input {
+  display: none;
+} /* Umpetin radio asli */
+
+.payment-toggle label {
+  flex: 1;
+  padding: 1rem;
+  border: 3px solid black;
+  text-align: center;
+  font-weight: 800;
+  cursor: pointer;
+  background: white;
+  box-shadow: 4px 4px 0px black;
+  border-radius: 10px;
+  transition: 0.2s;
+  font-size: 1.1rem;
+}
+
+/* Kalau Dipilih */
+.payment-toggle input:checked + label {
+  background-color: #22d3ee; /* Cyan Neon */
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px black;
+}
+
+/* --- 7. BADGE TOTAL UANG (CYAN TUA) --- */
+.info-badge.cyan-badge {
+  background-color: #06b6d4;
+  color: white;
+  border: 3px solid black;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 4px 4px 0px black;
+  margin-top: 1rem;
+}
+
+/* --- 8. TOMBOL UTAMA --- */
+.shop-btn {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: #0891b2; /* Cyan Gelap */
+  color: white;
+  font-weight: 900;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  border: 3px solid black;
+  box-shadow: 6px 6px 0px black;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-top: 2rem;
+  transition: all 0.1s;
+}
+
+.shop-btn:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px black;
+  background-color: #0e7490;
+}
+
+/* --- 9. HASIL (RESULT CARD) --- */
+.result-card {
+  margin-top: 3rem;
+  border: 4px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+  animation: slideUp 0.5s ease;
+  background-color: white;
+}
+
+.shop-header-result {
+  background-color: #06b6d4;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 3px solid black;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.result-body {
+  background-color: #111; /* Dark Mode */
+  padding: 2rem;
+  color: white;
+}
+
+.big-result {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.big-result h2 {
+  font-size: 2.5rem;
+  color: #67e8f9; /* Cyan Terang */
+  text-shadow: 3px 3px 0px black;
+  margin-top: 0.5rem;
+}
+
+/* Progress Bar */
+.comparison-bar-wrapper {
+  margin-bottom: 2rem;
+}
+.comp-label {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 25px;
+  background-color: #333;
+  border: 2px solid white;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  transition: width 1s ease;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #333;
+}
+
+/* Status Box */
+.safety-box {
+  border: 3px solid black;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px black;
+  color: black;
+  background-color: white;
+}
+.status-safe {
+  background-color: #4ade80;
+}
+.status-danger {
+  background-color: #ff5f56;
+  color: white;
+}
+
+.text-status h5 {
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.text-status p {
+  margin: 0;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+  .neo-container {
+    padding: 1.5rem;
+  }
+  .row-inputs {
+    flex-direction: column;
+    gap: 0;
+  }
+  .prefix,
+  .suffix {
+    padding: 0.8rem;
+  }
+}

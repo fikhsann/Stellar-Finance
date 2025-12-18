@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.container {
+  /* min-height: 1000vh; */
+  background-color: #fcf8f2;
+}
+
+/* Nav Section CSS */
+nav {
+  z-index: 10;
+  position: fixed;
+  background-color: white;
+  border: 2px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 5rem;
+}
+
+nav .logo {
+  color: black;
+  font-size: x-large;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+nav ul {
+  font-size: larger;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav ul li a {
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+}
+
+nav .nightMode {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+  border: 2px solid black;
+  box-shadow: 4px 4px;
+}
+
+/* Nav End */
+
+/* Hero Start */
+.hero {
+  position: relative;
+  border: 2px solid black;
+  padding-top: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .directFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero .directFeatures p {
+  font-size: small;
+  padding: 0.5rem 1rem;
+  color: #10b981;
+  border-radius: 20px;
+  background-color: #d1fae5;
+}
+
+.hero h1 {
+  text-align: center;
+  font-size: 65px;
+  width: 65%;
+}
+
+.hero .directFeatures a {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border: 2px solid black;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 5px 5px;
+}
+
+.hero .target {
+  position: absolute;
+  right: 10vh;
+  bottom: 10vh;
+}
+
+.hero .abstractTree {
+  position: absolute;
+  width: 180px;
+  rotate: -30deg;
+  left: 10vh;
+  bottom: 10vh;
+}
+
+/* Hero End */
+
+/* Line Gap */
+.lineGap {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  background-color: blueviolet;
+  color: white;
+  border: 2px solid black;
+}
+.lineGap p {
+  font-size: 20px;
+}
+
+/* About Start */
+.aboutStellar {
+  border: 2px solid black;
+  background-color: aquamarine;
+  min-height: 100vh;
+  display: flex;
+  padding-top: 2rem;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.whatStellar,
+.stellarFeatures {
+  height: 80vh;
+  padding: 2rem;
+  width: 30%;
+  text-align: justify;
+  border: 4px solid black;
+  box-shadow: 7px 7px;
+}
+
+.whatStellar {
+  background-color: lawngreen;
+}
+
+.stellarFeatures {
+  background-color: skyblue;
+}
+
+.whatStellar h2,
+.stellarFeatures h2 {
+  margin-bottom: 1rem;
+}
+
+.whatStellar p,
+.stellarFeatures ol li {
+  font-size: large;
+  margin-bottom: 0.5rem;
+}
+
+/* About Section End */
+
+/* Footer Start */
+/* --- FOOTER STYLE --- */
+footer {
+  position: relative;
+  background-color: orange;
+  color: white;
+  padding: 4rem 5rem;
+  border: 3px solid black;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- BAGIAN KIRI (HEADLINE) --- */
+.footer-left {
+  flex: 2; /* Bagian kiri lebih lebar */
+  min-width: 300px;
+}
+
+.footer-left h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.btn-footer {
+  display: inline-block;
+  background-color: white;
+  color: black; /* Teks warna ungu */
+  padding: 1rem 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  transition: transform 0.2s;
+  border: 2px solid black;
+  box-shadow: 3px 3px;
+}
+
+.btn-footer:hover {
+  transform: scale(1.05);
+}
+
+.footer-links {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* --- BAGIAN KANAN (CONTACT) --- */
+.footer-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 200px;
+}
+
+.footer-right a {
+  padding: 0.5rem;
+  width: fit-content;
+  color: black;
+  box-shadow: 3px 3px;
+  background-color: white;
+  border: 2px solid black;
+  font-size: large;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.footer-title {
+  position: absolute;
+  bottom: -12vh;
+  right: 29vh;
+  font-size: 200px;
+  font-weight: 600;
+}

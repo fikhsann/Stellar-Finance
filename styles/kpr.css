@@ -1,0 +1,260 @@
+/* --- 1. LAYOUT UTAMA & BACKGROUND --- */
+.kpr-section {
+  background-color: #fcf8f2; /* Warna krem background halaman */
+  min-height: 100vh;
+  padding: 8rem 2rem 5rem 2rem; /* Jarak biar gak ketutup navbar */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* --- 2. KOTAK KONTTAINER (WADAH UTAMA) --- */
+.neo-container {
+  background-color: white;
+  width: 100%;
+  max-width: 600px; /* Lebar maksimal biar enak dilihat */
+  border: 4px solid black; /* Garis tebal banget */
+  box-shadow: 12px 12px 0px black; /* Bayangan hitam keras */
+  padding: 2.5rem;
+  border-radius: 20px;
+}
+
+/* --- 3. HEADER & MASKOT --- */
+.calc-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.mascot-box {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+.calc-header h2 {
+  font-weight: 900;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  -webkit-text-stroke: 1px black; /* Opsional: Outline tipis */
+}
+
+/* --- 4. STYLE INPUT (KOTAK ISIAN) --- */
+.strategy-section h3 {
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid black;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.input-block {
+  margin-bottom: 1.5rem;
+}
+
+.input-block label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Kotak Input Neo */
+.neo-input-group {
+  display: flex;
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s;
+  background-color: white; /* Default putih */
+}
+
+/* Warna Tema KPR (Biru Muda) */
+.neo-input-group.blue-theme {
+  background-color: #e0f2fe;
+}
+
+/* Efek pas diklik */
+.neo-input-group:focus-within {
+  transform: translate(2px, 2px); /* Gerak dikit */
+  box-shadow: 4px 4px 0px black; /* Muncul bayangan */
+}
+
+/* Tulisan Rp / % / Tahun */
+.prefix,
+.suffix {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Input Field-nya sendiri */
+.neo-input-group input {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  font-weight: bold;
+  outline: none; /* Ilangin garis biru browser */
+  text-align: right; /* Angka rata kanan */
+}
+
+/* Layout Baris (Kiri Kanan) */
+.row-inputs {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Garis Pemisah */
+.divider {
+  border: 0;
+  border-top: 3px dashed #ccc;
+  margin: 2.5rem 0;
+}
+
+/* Input Mati (Read Only) */
+.disabled-input {
+  background-color: #eee !important;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* --- 5. TOMBOL HITUNG --- */
+.kpr-btn {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: #3ca9fc; /* BIRU TOMBOL */
+  color: white;
+  font-weight: 900;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  border: 3px solid black;
+  box-shadow: 6px 6px 0px black;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-top: 2rem;
+  transition: all 0.1s;
+}
+
+.kpr-btn:hover {
+  transform: translate(4px, 4px); /* Efek tombol ditekan */
+  box-shadow: 2px 2px 0px black;
+}
+
+/* --- 6. HASIL (RESULT CARD) --- */
+.result-card {
+  margin-top: 3rem;
+  border: 4px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.result-header {
+  background-color: #3ca9fc;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 3px solid black;
+}
+.result-header h4 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.result-body {
+  background-color: #111; /* Dark Mode */
+  padding: 2rem;
+  color: white;
+}
+
+/* Angka Gede */
+.big-result {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.big-result span {
+  opacity: 0.7;
+}
+.big-result h2 {
+  font-size: 2.5rem;
+  color: #ffd700; /* Kuning Emas */
+  margin-top: 0.5rem;
+  text-shadow: 3px 3px 0px black;
+}
+
+/* List Detail Bawahnya */
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #333;
+}
+.detail-item:last-child {
+  border: none;
+}
+
+/* --- 7. SAFETY BOX (BAHAYA/AMAN) --- */
+.safety-box {
+  border: 3px solid black;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px black;
+  color: black;
+}
+
+.status-safe {
+  background-color: #4ade80;
+} /* Hijau */
+.status-warning {
+  background-color: #facc15;
+} /* Kuning */
+.status-danger {
+  background-color: #ff5f56;
+  color: white;
+} /* Merah */
+
+.text-status h5 {
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+.text-status p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* --- RESPONSIF HP --- */
+@media (max-width: 768px) {
+  .neo-container {
+    padding: 1.5rem;
+  }
+  .row-inputs {
+    flex-direction: column;
+    gap: 0;
+  }
+  .prefix,
+  .suffix {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}

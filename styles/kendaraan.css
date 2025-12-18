@@ -1,0 +1,211 @@
+/* --- 1. LAYOUT & BACKGROUND ORANYE --- */
+.vehicle-section {
+  background-color: #fcf8f2; /* Krem Cerah */
+  min-height: 100vh;
+  padding: 8rem 2rem 5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* --- 2. CONTAINER UTAMA (KOTAK GEDE) --- */
+.neo-container {
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  border: 4px solid black; /* Border Tebal Khas Neo */
+  box-shadow: 12px 12px 0px black; /* Shadow Keras */
+  padding: 2.5rem;
+  border-radius: 20px;
+}
+
+/* --- 3. HEADER & JUDUL --- */
+.calc-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.mascot-box {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+.calc-header h2 {
+  font-weight: 900;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+}
+
+/* --- 4. INPUT FIELD (WARNA ORANYE) --- */
+.input-block {
+  margin-bottom: 1.5rem;
+}
+.input-block label {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.row-inputs {
+  display: flex;
+  gap: 1rem;
+}
+
+.neo-input-group {
+  display: flex;
+  border: 3px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.2s;
+  background-color: white;
+}
+
+/* INI YANG BIKIN ORANYE BOS */
+.neo-input-group.orange-theme {
+  background-color: #ffedd5; /* Oranye Muda Banget */
+}
+
+.neo-input-group:focus-within {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px black;
+  background-color: #fed7aa; /* Jadi agak gelap pas diklik */
+}
+
+.prefix,
+.suffix {
+  padding: 1rem;
+  background: black;
+  color: white;
+  font-weight: bold;
+}
+
+.money-input,
+input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+  outline: none;
+}
+
+/* --- 5. BADGE INFO (YANG KOTAK KUNING DI TENGAH) --- */
+.info-badge.orange-badge {
+  background-color: #fbbf24; /* Kuning Emas */
+  color: black;
+  border: 3px solid black;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 4px 4px 0px black;
+  margin-top: 1rem;
+}
+
+/* --- 6. TOMBOL UTAMA (GAHAR) --- */
+.vehicle-btn {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: #f97316; /* ORANYE NYALA */
+  color: white;
+  font-weight: 900;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  border: 3px solid black;
+  box-shadow: 6px 6px 0px black;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-top: 2rem;
+  transition: all 0.1s;
+}
+
+.vehicle-btn:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px black;
+  background-color: #ea580c;
+}
+
+/* --- 7. HASIL (RESULT CARD) --- */
+.result-card {
+  margin-top: 3rem;
+  border: 4px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+  animation: slideUp 0.5s ease;
+}
+
+.vehicle-header-result {
+  background-color: #f97316; /* Header Oranye */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 3px solid black;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.result-body {
+  background-color: #1a1a1a; /* Dark Mode */
+  padding: 2rem;
+  color: white;
+}
+
+.big-result {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.big-result h2 {
+  font-size: 2.5rem;
+  color: #fbbf24; /* Kuning text */
+  text-shadow: 3px 3px 0px black;
+}
+
+/* Progress Bar Style */
+.comparison-bar-wrapper {
+  margin-bottom: 2rem;
+}
+.progress-track {
+  width: 100%;
+  height: 30px;
+  background-color: #333;
+  border: 2px solid white;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+.progress-fill {
+  height: 100%;
+  background-color: #4ade80;
+  transition: width 1s ease;
+}
+
+/* List Detail Bawah */
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #333;
+}
+
+/* --- RESPONSIF HP --- */
+@media (max-width: 768px) {
+  .neo-container {
+    padding: 1.5rem;
+  }
+  .row-inputs {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+/* Animasi Muncul */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
